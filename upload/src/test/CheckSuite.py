@@ -3,61 +3,61 @@ from TestUtils import TestChecker
 from AST import *
 
 class CheckSuite(unittest.TestCase):
-    # def test_int_varDecl(self):
+    def test_int_varDecl(self):
 
-    #     input = Program([
-    #                     VarDecl("a", IntType()),
-    #                     FuncDecl(Id('main'),
-    #                         [], 
-    #                         VoidType(),
-    #                         Block([
-    #                             BinaryOp('+',Id('a'),Id('a'))
-    #                         ]))
-    #                     ])
-    #     expect = ""
-    #     self.assertTrue(TestChecker.test(input,expect,400))
+        input = Program([
+                        VarDecl("a", IntType()),
+                        FuncDecl(Id('main'),
+                            [], 
+                            VoidType(),
+                            Block([
+                                Return(None)
+                            ]))
+                        ])
+        expect = ""
+        self.assertTrue(TestChecker.test(input,expect,400))
 
-    # def test_More_int_VarDecl(self):
+    def test_More_int_VarDecl(self):
 
-    #     input = Program([
-    #                     VarDecl("a", IntType()),
-    #                     VarDecl("b", IntType()),
-    #                     FuncDecl(Id('main'),[], VoidType(),Block([Return()]))
-    #                     ])
-    #     expect = ""
-    #     self.assertTrue(TestChecker.test(input,expect,401))
+        input = Program([
+                        VarDecl("a", IntType()),
+                        VarDecl("b", IntType()),
+                        FuncDecl(Id('main'),[], VoidType(),Block([Return(None)]))
+                        ])
+        expect = ""
+        self.assertTrue(TestChecker.test(input,expect,401))
 
-    # def test_int_ReVarDecl(self):
+    def test_int_ReVarDecl(self):
 
-    #     input = Program([
-    #                     VarDecl("a", IntType()),
-    #                     VarDecl("a", IntType()),
-    #                     FuncDecl(Id('main'),[], VoidType(),Block([Return()]))
-    #                     ])
-    #     expect = "Redeclared Variable: a"
-    #     self.assertTrue(TestChecker.test(input,expect,402))
+        input = Program([
+                        VarDecl("a", IntType()),
+                        VarDecl("a", IntType()),
+                        FuncDecl(Id('main'),[], VoidType(),Block([Return(None)]))
+                        ])
+        expect = "Redeclared Variable: a"
+        self.assertTrue(TestChecker.test(input,expect,402))
     
 
-    # def test_main_ReFuncDecl(self):
+    def test_main_ReFuncDecl(self):
 
-    #     input = Program([
-    #                     VarDecl("a", IntType()),
-    #                     FuncDecl(Id('main'),[], VoidType(),Block([Return()])),
-    #                     FuncDecl(Id('main'),[], VoidType(),Block([Return()]))
-    #                     ])
-    #     expect = "Redeclared Function: main"
-    #     self.assertTrue(TestChecker.test(input,expect,403))
+        input = Program([
+                        VarDecl("a", IntType()),
+                        FuncDecl(Id('main'),[], IntType(),Block([Return(None)])),
+                        FuncDecl(Id('main'),[], VoidType(),Block([Return(None)]))
+                        ])
+        expect = "Redeclared Function: main"
+        self.assertTrue(TestChecker.test(input,expect,403))
     
 
-    # def test_main_FuncDecl(self):
+    def test_main_FuncDecl(self):
 
-    #     input = Program([
-    #                     VarDecl("a", IntType()),
-    #                     FuncDecl(Id('main'),[], VoidType(),Block([Return()])),
-    #                     FuncDecl(Id('foo'),[], VoidType(),Block([Return()]))
-    #                     ])
-    #     expect = ""
-    #     self.assertTrue(TestChecker.test(input,expect,404))
+        input = Program([
+                        VarDecl("a", IntType()),
+                        FuncDecl(Id('main'),[], VoidType(),Block([Return(None)])),
+                        FuncDecl(Id('foo'),[], VoidType(),Block([Return(None)]))
+                        ])
+        expect = "Unreachable Function: foo"
+        self.assertTrue(TestChecker.test(input,expect,404))
 
     # def test_FuncDecl(self):
 
@@ -449,19 +449,19 @@ class CheckSuite(unittest.TestCase):
     #     self.assertTrue(TestChecker.test(input,expect,426))
 
 
-    def test27(self):
+    # def test27(self):
 
-        input = Program([
-                        FuncDecl(Id('foo'), [VarDecl('a', IntType())], IntType(), Block([Return(None)])),
-                        FuncDecl(Id('main'),[], 
-                                            VoidType(),
-                                            Block([
-                                                VarDecl('a', BoolType()),
-                                                VarDecl('b', IntType()),
-                                                VarDecl('main', IntType()),
-                                                For(IntLiteral(1),Id('a'),IntLiteral(1),Block([Break()])),
-                                                Return(None)
-                                            ]))
-                        ])
-        expect = "Break Not In Loop"
-        self.assertTrue(TestChecker.test(input,expect,427))
+    #     input = Program([
+    #                     FuncDecl(Id('foo'), [VarDecl('a', IntType())], IntType(), Block([Return(None)])),
+    #                     FuncDecl(Id('main'),[], 
+    #                                         VoidType(),
+    #                                         Block([
+    #                                             VarDecl('a', BoolType()),
+    #                                             VarDecl('b', IntType()),
+    #                                             VarDecl('main', IntType()),
+    #                                             For(IntLiteral(1),Id('a'),IntLiteral(1),Block([Return(None)])),
+                                                
+    #                                         ]))
+    #                     ])
+    #     expect = "Break Not In Loop"
+    #     self.assertTrue(TestChecker.test(input,expect,427))

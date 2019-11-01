@@ -1,1 +1,1 @@
-Program([VarDecl(a,ArrayTypePointer(FloatType)),FuncDecl(Id(main),[VarDecl(a,ArrayTypePointer(FloatType)),VarDecl(b,IntType)],VoidType,Block([]))])
+Program([VarDecl(a,BoolType),FuncDecl(Id(main),[],VoidType,Block([If(Id(a),Block([CallExpr(Id(Foo),[])]),Block([]))])),FuncDecl(Id(Foo),[],BoolType,Block([If(Id(a),Block([Return(Id(a))]),Block([Return(Id(a))]))]))])

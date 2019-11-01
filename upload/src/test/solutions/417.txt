@@ -1,1 +1,1 @@
-Undeclared Variable: b
+Function baz Not Return 

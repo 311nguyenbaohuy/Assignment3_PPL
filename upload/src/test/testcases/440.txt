@@ -1,0 +1,1 @@
+Program([FuncDecl(Id(sample),[],IntType,Block([If(BooleanLiteral(true),Block([]),Block([])),Block([Return(IntLiteral(1))])])),FuncDecl(Id(main),[],VoidType,Block([Return(IntLiteral(1))]))])
