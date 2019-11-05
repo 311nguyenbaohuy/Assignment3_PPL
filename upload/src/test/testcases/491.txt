@@ -1,0 +1,18 @@
+
+        void main()
+        {
+            int a, b;
+   
+            putString("Input two integers (a & b) to swap\n");
+            b=getInt();
+            a=getInt();
+   
+            a = a + b;
+            b = a - b;
+            a = a - b;
+ 
+            putString("a = %d\nb = %d\n");
+            putInt(a);
+            putInt(b);
+        }
+        

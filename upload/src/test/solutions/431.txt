@@ -1,1 +1,1 @@
-Redeclared Variable: foo
+Type Mismatch In Expression: BinaryOp(=,Id(a),Id(b))

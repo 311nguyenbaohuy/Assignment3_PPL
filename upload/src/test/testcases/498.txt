@@ -1,0 +1,19 @@
+
+        int catalan(int n) 
+        { 
+            if (n <= 1) return 1; 
+            int res;
+            res= 0;
+            int i; 
+            for (i=0; i<n; i = i + 1) 
+                res = res+ catalan(i)*catalan(n-i-1); 
+            return res; 
+        } 
+        void main()
+        {
+            int i;
+            putString("Nhap vao mot so nguyen: ");
+            i = getInt();
+            putInt(catalan(i));
+        }
+        

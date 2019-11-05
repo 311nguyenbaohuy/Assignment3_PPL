@@ -1,1 +1,1 @@
-Program([FuncDecl(Id(main),[],VoidType,Block([Block([VarDecl(i,IntType),VarDecl(c,BoolType),For(Id(i);Id(c);Id(i);Block([If(Id(c),Block([Continue()]),Block([Break()]))]))])]))])
+Program([FuncDecl(Id(foo),[],IntType,Block([Return(CallExpr(Id(foo),[]))])),FuncDecl(Id(main),[],VoidType,Block([CallExpr(Id(foo),[])]))])

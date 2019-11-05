@@ -1,0 +1,15 @@
+
+        int Sin(int x){
+            int t,sum,n,i;
+            n = 1000;
+            for(i=1;i<=n;i=i+1)
+            {
+                t=(t*(-1)*x*x)/(2*i*(2*i+1));
+                sum=sum+t;
+            }
+        }
+        void main()
+        {
+            putInt(Sin(a));
+        }
+        

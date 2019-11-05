@@ -1,0 +1,15 @@
+
+        int sum(int a, int b)
+        {
+            if (b<a) return 0;
+            else
+                return b + sum(a,b-1);
+        }
+        void main()
+        {
+            int a,b;
+            putString("Input a : ");a=getInt();putStringLn("\n");
+            putString("Input b : ");b=getInt();putStringLn("\n");
+            putString("Sum : ");putInt(sum(a+b));
+        }
+        

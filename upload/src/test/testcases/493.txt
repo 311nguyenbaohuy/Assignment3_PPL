@@ -1,0 +1,23 @@
+
+        int xor(int a,int b)
+        {
+            return a-b +b/a;
+        }
+
+        int min(int x, int y) 
+        { 
+            return xor(y,(xor(x,y) + -(x + y))); 
+        } 
+
+        int max(int x, int y) 
+        { 
+            return xor(x,(xor(x,y) - -(x + y)));  
+        } 
+        void main() 
+        { 
+            int x ; x = 15; 
+            int y ; y = 6; 
+            putStringLn("Minimum : ");
+            putInt(min(x,y)); 
+        } 
+        

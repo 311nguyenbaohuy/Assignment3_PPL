@@ -1,0 +1,29 @@
+
+        float F(float x,int n) {
+            int a,i;
+            if (n % 2 == 0)
+                a = 1;
+            else
+                a = -1;
+            float temp ;
+            temp= 1;
+            for (i = 1; i <= 2 * n + 1; i=i+1)
+                temp = temp * x / i;
+            return a * temp;
+        }
+        int main()
+        {   
+            float x, sin;
+            sin =0.0;
+            putString("Nhap gia tri sin can tinh(radian): ");
+            getFloat(x);
+            int n ;
+            n= 0;
+            do{
+                sin = sin+ F(x, n);
+                n=n+1;
+            }while (abs(F(x, n)) > 0.00001) ;
+            putString("Gia tri can tinh: ");
+            putFloat(sin);
+        }
+        

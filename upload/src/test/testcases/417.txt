@@ -1,1 +1,1 @@
-Program([FuncDecl(Id(main),[],VoidType,Block([CallExpr(Id(baz),[BooleanLiteral(true)])])),FuncDecl(Id(baz),[VarDecl(b,BoolType)],BoolType,Block([VarDecl(i,IntType),For(Id(i);Id(b);Id(i);Block([Return(Id(b))]))]))])
+Program([VarDecl(a,ArrayType(IntType,5)),FuncDecl(Id(main),[],VoidType,Block([ArrayCell(Id(a),IntLiteral(5))]))])

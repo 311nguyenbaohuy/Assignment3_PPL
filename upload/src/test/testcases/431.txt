@@ -1,1 +1,1 @@
-Program([FuncDecl(Id(main),[],VoidType,Block([])),FuncDecl(Id(foo),[],StringType,Block([Block([Block([]),Return(StringLiteral(Hello))])])),VarDecl(foo,IntType)])
+Program([FuncDecl(Id(main),[],VoidType,Block([VarDecl(a,IntType),VarDecl(b,FloatType),BinaryOp(=,Id(a),Id(b))]))])

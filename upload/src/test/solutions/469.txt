@@ -1,0 +1,1 @@
+Not Left Value: BinaryOp(=,BinaryOp(+,Id(i),IntLiteral(1)),BinaryOp(+,Id(i),IntLiteral(1)))

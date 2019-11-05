@@ -1,1 +1,0 @@
-Not Left Value: BinaryOp(=,BinaryOp(*,Id(a),Id(a)),BinaryOp(+,Id(a),Id(new_value)))
